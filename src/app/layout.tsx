@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 
 import { QueryProvider } from "@/providers/query-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { BackgroundVideo } from "@/components/common/BackgroundVideo";
 
 export const metadata: Metadata = {
   title: "Facade - Modern Web App",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <QueryProvider>
+          <BackgroundVideo />
           {children}
           <Toaster position="top-right" richColors />
         </QueryProvider>
