@@ -33,9 +33,9 @@ const steps = [
 export function HowItWorks() {
     return (
         <section className="w-full bg-transparent py-20 flex justify-center border-y border-white/5">
-            <div className="w-full max-w-[1280px] px-6 md:px-[120px] flex flex-col items-center gap-16">
+            <div className="w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] flex flex-col items-center gap-16">
                 {/* Title */}
-                <div className="flex flex-col items-center gap-4 text-center">
+                <div className="flex flex-col items-center gap-4 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
                     <h2 className="text-white font-bold text-3xl md:text-4xl tracking-tight">
                         How it works?
                     </h2>
@@ -47,7 +47,10 @@ export function HowItWorks() {
                     {steps.map((step) => (
                         <div
                             key={step.id}
-                            className="group relative flex flex-col items-center gap-6 p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl transition-all hover:bg-white/[0.05] hover:border-white/20"
+                            className="group relative flex flex-col items-center gap-6 p-8 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl transition-all duration-500 hover:bg-white/[0.05] hover:border-white/20 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 animate-in fade-in slide-in-from-bottom-8 duration-700"
+                            style={{
+                                animationDelay: `${step.id * 200}ms`,
+                            }}
                         >
                             {/* Step Number Badge */}
                             <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold shadow-xl z-20">
@@ -55,7 +58,7 @@ export function HowItWorks() {
                             </div>
 
                             {/* Icon / Tech Visual */}
-                            <div className="relative w-24 h-24 flex items-center justify-center">
+                            <div className="relative w-24 h-24 flex items-center justify-center animate-pulse">
                                 {/* Outer Ring */}
                                 <div className="absolute inset-0 rounded-full border-4 border-white/10 group-hover:border-purple-500/30 transition-colors duration-500" />
                                 {/* Tech Logo Placeholder */}

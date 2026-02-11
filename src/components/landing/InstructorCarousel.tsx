@@ -37,8 +37,8 @@ export function InstructorCarousel() {
 
     return (
         <section className="w-full bg-transparent py-16 flex justify-center">
-            <div className="w-full max-w-[1280px] px-6 md:px-[120px] relative">
-                <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#0c051e] to-black" ref={emblaRef}>
+            <div className="w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] relative">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#0c051e] to-black transition-all duration-500" ref={emblaRef}>
                     <div className="flex">
                         {slides.map((slide, index) => (
                             <div key={index} className="flex-[0_0_100%] min-w-0 relative flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-[400px] md:h-[535px]">
@@ -50,7 +50,7 @@ export function InstructorCarousel() {
                                     <p className="text-white/80 text-sm md:text-base leading-relaxed">
                                         {slide.description}
                                     </p>
-                                    <button className="w-fit px-8 py-4 rounded-lg bg-white text-black font-semibold shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:bg-white/90 transition-all">
+                                    <button className="w-fit px-8 py-4 rounded-lg bg-white text-black font-semibold shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:bg-white/90 hover:scale-105 transition-all duration-300">
                                         Start your instructor journey
                                     </button>
                                 </div>
@@ -74,13 +74,13 @@ export function InstructorCarousel() {
                 {/* Navigation Buttons */}
                 <button
                     onClick={scrollPrev}
-                    className="absolute left-8 md:left-[140px] top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 border border-white/20 text-white hover:bg-black/80 transition-all opacity-0 md:opacity-100 group-hover:opacity-100"
+                    className="absolute left-8 md:left-[80px] lg:left-[140px] top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 border border-white/20 text-white hover:bg-black/80 transition-all opacity-0 md:opacity-100 group-hover:opacity-100"
                 >
                     <ChevronLeft size={24} />
                 </button>
                 <button
                     onClick={scrollNext}
-                    className="absolute right-8 md:right-[140px] top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 border border-white/20 text-white hover:bg-black/80 transition-all opacity-0 md:opacity-100 group-hover:opacity-100"
+                    className="absolute right-8 md:right-[80px] lg:right-[140px] top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/50 border border-white/20 text-white hover:bg-black/80 transition-all opacity-0 md:opacity-100 group-hover:opacity-100"
                 >
                     <ChevronRight size={24} />
                 </button>
