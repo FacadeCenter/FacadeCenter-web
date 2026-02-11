@@ -7,7 +7,7 @@ import { BackgroundVideo } from "@/components/common/BackgroundVideo";
 
 export default function LoginPage() {
     return (
-        <div className="min-h-screen bg-black flex flex-col relative">
+        <div className="min-h-screen flex flex-col relative">
             <BackgroundVideo />
             <Navbar />
 

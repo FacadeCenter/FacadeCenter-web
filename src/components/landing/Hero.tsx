@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Play, Users, BookOpen, Award } from "lucide-react";
 
@@ -53,13 +54,13 @@ export function Hero() {
 
                     {/* CTAs */}
                     <div className="flex flex-wrap gap-4">
-                        <button className="group px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        <Link href="/courses" className="group px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2">
                             <span>Start Learning</span>
                             <Play className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                        <button className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm">
+                        </Link>
+                        <Link href="/courses" className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm">
                             Explore Courses
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -78,9 +79,9 @@ export function Hero() {
 
                         {/* Play Button Overlay */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <button className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300 group">
+                            <Link href="/courses/2" className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 hover:scale-110 transition-all duration-300 group">
                                 <Play className="w-8 h-8 text-white ml-1 group-hover:scale-110 transition-transform" fill="white" />
-                            </button>
+                            </Link>
                         </div>
 
                         {/* Course Info Badge */}

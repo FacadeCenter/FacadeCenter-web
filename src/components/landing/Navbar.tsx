@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-    { label: "Cources", href: "#" },
-    { label: "For Teachers", href: "#" },
-    { label: "Pricing", href: "#" },
+    { label: "Courses", href: "/courses" },
+    { label: "For Teachers", href: "/contact" },
+    { label: "Pricing", href: "/signup" },
 ];
 
 export function Navbar() {
@@ -38,7 +38,8 @@ export function Navbar() {
 
                 {/* Buttons */}
                 <div className="hidden md:flex items-center gap-[10px]">
-                    <button
+                    <Link
+                        href="/login"
                         className={cn(
                             "px-[27px] py-[13px] rounded-[10px] text-white font-bold text-[15px] transition-all",
                             "bg-white/5 border border-white/10 hover:bg-white/10"
@@ -46,8 +47,9 @@ export function Navbar() {
                         style={{ fontFamily: "'Century Gothic', sans-serif" }}
                     >
                         Log In
-                    </button>
-                    <button
+                    </Link>
+                    <Link
+                        href="/signup"
                         className={cn(
                             "px-[27px] py-[13px] rounded-[10px] bg-white text-black font-bold text-[15px] transition-all",
                             "hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
@@ -55,7 +57,7 @@ export function Navbar() {
                         style={{ fontFamily: "'Century Gothic', sans-serif" }}
                     >
                         Sign Up
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -81,12 +83,12 @@ export function Navbar() {
                         </Link>
                     ))}
                     <div className="flex flex-col gap-3 pt-4 border-t border-white/10">
-                        <button className="w-full py-3 rounded-lg bg-white/5 text-white font-bold border border-white/10">
+                        <Link href="/login" onClick={() => setIsOpen(false)} className="w-full py-3 rounded-lg bg-white/5 text-white font-bold border border-white/10 text-center">
                             Log In
-                        </button>
-                        <button className="w-full py-3 rounded-lg bg-white text-black font-bold">
+                        </Link>
+                        <Link href="/signup" onClick={() => setIsOpen(false)} className="w-full py-3 rounded-lg bg-white text-black font-bold text-center">
                             Sign Up
-                        </button>
+                        </Link>
                     </div>
                 </div>
             )}
