@@ -16,7 +16,7 @@ export function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-white/5">
-            <div className="max-w-[1280px] mx-auto px-6 md:px-[120px] h-[94px] flex items-center justify-between">
+            <div className="max-w-[1280px] mx-auto px-6 md:px-[60px] lg:px-[120px] h-[94px] flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="text-white font-bold text-2xl tracking-tighter">
                     FACADE
