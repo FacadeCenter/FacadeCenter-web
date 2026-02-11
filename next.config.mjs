@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "standalone", // Let Vercel handle output optimization by default
+  output: "standalone",
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",
