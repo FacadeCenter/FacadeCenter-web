@@ -32,7 +32,7 @@ export function Footer() {
                         <ul className="flex flex-col gap-3 text-white/60 text-sm">
                             <li><Link href="/courses" className="hover:text-white transition-colors">Courses</Link></li>
                             <li><Link href="/contact" className="hover:text-white transition-colors">For Teachers</Link></li>
-                            <li><Link href="/signup" className="hover:text-white transition-colors">Pricing</Link></li>
+                            <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
                             <li><Link href="/about" className="hover:text-white transition-colors">Success Stories</Link></li>
                         </ul>
                     </div>
@@ -41,9 +41,9 @@ export function Footer() {
                     <div className="flex flex-col gap-6">
                         <h3 className="text-white font-semibold text-lg">Support</h3>
                         <ul className="flex flex-col gap-3 text-white/60 text-sm">
-                            <li><Link href="/" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                            <li><Link href="/" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                            <li><Link href="/contact" className="hover:text-white transition-colors">Help Center</Link></li>
+                            <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                            <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition-colors">Help Center</Link></li>
                             <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
