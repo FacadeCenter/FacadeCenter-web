@@ -4,7 +4,7 @@ import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { BackgroundVideo } from "@/components/common/BackgroundVideo";
 import { Award, Globe, Users, Zap, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+
 
 export default function AboutPage() {
     return (
@@ -50,7 +50,7 @@ export default function AboutPage() {
                             </div>
                             <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                To become the world's leading platform for futuristic education, fostering a generation of innovators, creators, and leaders who are equipped to solve the challenges of the next century.
+                                To become the world&apos;s leading platform for futuristic education, fostering a generation of innovators, creators, and leaders who are equipped to solve the challenges of the next century.
                             </p>
                         </div>
                     </div>
