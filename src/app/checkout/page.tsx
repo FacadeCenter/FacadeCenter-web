@@ -3,9 +3,9 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { BackgroundVideo } from "@/components/common/BackgroundVideo";
-import { CreditCard, Lock, CheckCircle2 } from "lucide-react";
+import { Lock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import Image from "next/image";
+
 
 // Reusable Input Component with Glassmorphism
 const GlassInput = ({
@@ -50,8 +50,8 @@ const PaymentMethod = ({
     <button
         onClick={onClick}
         className={`h-16 px-6 rounded-xl border flex items-center gap-3 transition-all duration-300 ${active
-                ? "bg-white/10 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.2)] scale-[1.02]"
-                : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30"
+            ? "bg-white/10 border-purple-500 shadow-[0_0_20px_rgba(168,85,247,0.2)] scale-[1.02]"
+            : "bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/30"
             }`}
     >
         {children}
