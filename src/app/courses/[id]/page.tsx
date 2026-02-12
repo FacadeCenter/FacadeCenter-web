@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { Star, Clock, Users, BookOpen, Award, Play, Download, ChevronLeft, ChevronRight, TrendingUp, ThumbsUp, ChevronDown, CheckCircle2 } from "lucide-react";
+import { Star, Users, BookOpen, Award, Play, Download, ChevronLeft, ChevronRight, TrendingUp, ThumbsUp, ChevronDown } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { BackgroundVideo } from "@/components/common/BackgroundVideo";
@@ -263,7 +263,7 @@ export default function CourseDetailsPage() {
                             ].map((tab) => (
                                 <button
                                     key={tab.id}
-                                    onClick={() => setActiveTab(tab.id as any)}
+                                    onClick={() => setActiveTab(tab.id as typeof activeTab)}
                                     className={`px-8 py-3 rounded-t-xl text-base font-medium transition-all relative ${activeTab === tab.id
                                         ? "text-white bg-white/10"
                                         : "text-gray-400 hover:text-white hover:bg-white/5"
@@ -311,7 +311,7 @@ export default function CourseDetailsPage() {
 
                                         {/* What You'll Learn */}
                                         <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                                            <h3 className="text-xl font-bold text-white mb-6">What you'll learn</h3>
+                                            <h3 className="text-xl font-bold text-white mb-6">What you&apos;ll learn</h3>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 {course.whatYouLearn.map((item, idx) => (
                                                     <div key={idx} className="flex items-center gap-3">
@@ -492,7 +492,7 @@ export default function CourseDetailsPage() {
                                                     ))}
                                                 </div>
                                             </div>
-                                            <p className="text-gray-300 leading-relaxed italic text-lg opacity-90">"{review.comment}"</p>
+                                            <p className="text-gray-300 leading-relaxed italic text-lg opacity-90">&quot;{review.comment}&quot;</p>
                                             <div className="mt-6 pt-6 border-t border-white/5 flex gap-4 text-sm text-gray-400">
                                                 <button className="flex items-center gap-2 hover:text-white transition-colors group">
                                                     <ThumbsUp className="w-4 h-4 group-hover:scale-110 transition-transform" /> Helpful
