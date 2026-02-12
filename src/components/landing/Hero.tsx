@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+
 import { Play, Users, BookOpen, Award } from "lucide-react";
 
 export function Hero() {

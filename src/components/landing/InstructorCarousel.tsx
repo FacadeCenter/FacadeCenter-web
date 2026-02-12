@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { cn } from "@/lib/utils";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [

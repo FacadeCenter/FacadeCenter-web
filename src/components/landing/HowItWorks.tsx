@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Search, CreditCard, Layout, BookOpen } from "lucide-react";
+import { Search, CreditCard, BookOpen } from "lucide-react";
 
 const steps = [
     {
