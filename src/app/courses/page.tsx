@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Filter, Star, Clock, Users, BookOpen, TrendingUp, Award, Zap, ChevronRight, Play, Download, Heart, Share2, BarChart3, Sparkles } from "lucide-react";
+import { Search, Filter, Star, Clock, Users, BookOpen, TrendingUp, Award, Zap, ChevronRight, Play, Heart, Share2, BarChart3, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
 import { BackgroundVideo } from "@/components/common/BackgroundVideo";
