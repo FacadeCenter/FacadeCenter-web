@@ -1,11 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { type User } from "next-auth";
 
 interface AppState {
     theme: "light" | "dark";
     toggleTheme: () => void;
-    user: any | null;
-    setUser: (user: any) => void;
+    user: User | null;
+    setUser: (user: User | null) => void;
 }
 
 export const useAppStore = create<AppState>()(
