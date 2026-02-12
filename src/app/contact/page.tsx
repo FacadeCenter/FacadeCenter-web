@@ -19,7 +19,7 @@ export default function ContactPage() {
                             Get in Touch
                         </span>
                         <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-                            We'd Love to Hear From You
+                            We&apos;d Love to Hear From You
                         </h1>
                         <p className="text-gray-400 text-xl max-w-2xl mx-auto">
                             Whether you have a question about courses, pricing, or anything else, our team is ready to answer all your questions.
