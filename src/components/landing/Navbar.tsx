@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -41,9 +42,13 @@ export function Navbar() {
                     href="/"
                     className="flex items-center gap-2 group"
                 >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform">
-                        F
-                    </div>
+                    <Image 
+                        src="/logo.png" 
+                        alt="Facade Logo" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain group-hover:scale-105 transition-transform" 
+                    />
                     <span className="text-white font-bold text-2xl tracking-tight group-hover:text-purple-300 transition-colors">
                         FACADE
                     </span>
@@ -72,7 +77,7 @@ export function Navbar() {
                     })}
                 </div>
 
-                {/* Buttons */}
+                {/* Buttons - Temporarily disabled
                 <div className="hidden md:flex items-center gap-4">
                     <Link
                         href="/login"
@@ -91,6 +96,7 @@ export function Navbar() {
                         Get Started
                     </Link>
                 </div>
+                */}
 
                 {/* Mobile Menu Toggle */}
                 <button
@@ -122,6 +128,7 @@ export function Navbar() {
                             {link.label}
                         </Link>
                     ))}
+                    {/* Temporarily disabled
                     <div className="flex flex-col gap-3 pt-4 mt-2">
                         <Link
                             href="/login"
@@ -138,6 +145,7 @@ export function Navbar() {
                             Get Started
                         </Link>
                     </div>
+                    */}
                 </div>
             </div>
         </nav>
