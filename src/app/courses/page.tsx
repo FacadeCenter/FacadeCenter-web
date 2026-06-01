@@ -30,99 +30,68 @@ export interface Course {
 export const courses: Course[] = [
     {
         id: 1,
-        title: "Complete Java Programming Masterclass",
+        title: "DevOps Launchpad",
         category: "Programming",
-        description: "Master Java from basics to advanced concepts with real-world projects",
-        price: 5000,
-        originalPrice: 8000,
-        image: "/course-java.png",
-        instructor: "Dr. Sarah Johnson",
-        rating: 4.8,
-        students: 12543,
-        duration: "42h",
-        lessons: 156,
-        level: "Beginner",
+        description: "Master modern DevOps practices, CI/CD pipelines, Docker, Kubernetes, and cloud infrastructure.",
+        price: 15000,
+        originalPrice: 20000,
+        image: "/course-web.png", // Reusing existing placeholder
+        instructor: "DevOps Team",
+        rating: 4.9,
+        students: 2150,
+        duration: "40h",
+        lessons: 120,
+        level: "Intermediate",
         trending: true,
         bestseller: true,
     },
     {
         id: 2,
-        title: "Full Stack Web Development Bootcamp",
+        title: "Angular Spring boot program",
         category: "Web Development",
-        description: "Build modern web applications with React, Node.js, and MongoDB",
-        price: 5000,
-        originalPrice: 9000,
-        image: "/course-web.png",
-        instructor: "Michael Chen",
-        rating: 4.9,
-        students: 18234,
-        duration: "38h",
-        lessons: 142,
-        level: "Intermediate",
+        description: "Build robust enterprise applications using Angular for the frontend and Spring Boot for the backend.",
+        price: 12000,
+        originalPrice: 18000,
+        image: "/course-java.png",
+        instructor: "Fullstack Team",
+        rating: 4.8,
+        students: 3420,
+        duration: "55h",
+        lessons: 160,
+        level: "Advanced",
         bestseller: true,
-        progress: 35,
     },
     {
         id: 3,
-        title: "Data Science & Machine Learning",
+        title: "AI-ML",
         category: "Data Science",
-        description: "Learn Python, ML algorithms, and data visualization techniques",
-        price: 5000,
+        description: "Dive deep into Artificial Intelligence and Machine Learning algorithms, Python, and neural networks.",
+        price: 18000,
         image: "/course-data.png",
-        instructor: "Prof. Emily Rodriguez",
-        rating: 4.7,
-        students: 9876,
-        duration: "52h",
-        lessons: 178,
+        instructor: "AI Research Team",
+        rating: 4.9,
+        students: 1890,
+        duration: "60h",
+        lessons: 200,
         level: "Advanced",
         trending: true,
     },
     {
         id: 4,
-        title: "UI/UX Design Masterclass",
-        category: "Design",
-        description: "Create stunning user interfaces with Figma and modern design principles",
-        price: 5000,
-        originalPrice: 7000,
-        image: "/course-design.png",
-        instructor: "Alex Thompson",
-        rating: 4.9,
-        students: 15432,
-        duration: "28h",
-        lessons: 98,
-        level: "Beginner",
-        progress: 60,
-    },
-    {
-        id: 5,
-        title: "Advanced JavaScript & TypeScript",
-        category: "Programming",
-        description: "Deep dive into modern JavaScript and TypeScript development",
-        price: 5000,
-        image: "/course-java.png",
-        instructor: "David Park",
-        rating: 4.8,
-        students: 11234,
-        duration: "35h",
-        lessons: 124,
-        level: "Advanced",
-        trending: true,
-    },
-    {
-        id: 6,
-        title: "Cloud Computing with AWS",
+        title: "Next jS + Nest js",
         category: "Web Development",
-        description: "Master AWS services and cloud architecture patterns",
-        price: 5000,
-        originalPrice: 8500,
-        image: "/course-web.png",
-        instructor: "Lisa Anderson",
-        rating: 4.6,
-        students: 8765,
-        duration: "24h",
-        lessons: 86,
+        description: "The ultimate modern stack: Next.js App Router on the client and NestJS on the server.",
+        price: 14000,
+        originalPrice: 22000,
+        image: "/course-design.png",
+        instructor: "Web Engineering Team",
+        rating: 4.9,
+        students: 4500,
+        duration: "45h",
+        lessons: 140,
         level: "Intermediate",
         bestseller: true,
+        trending: true,
     },
 ];
 
@@ -213,31 +182,38 @@ export default function CoursesPage() {
                     <div className="max-w-7xl mx-auto">
                         <div className="flex gap-6">
                             {/* Sidebar */}
-                            <aside className={`${sidebarOpen ? 'w-80' : 'w-0'} transition-all duration-300 overflow-hidden`}>
-                                <div className="sticky top-24 space-y-6">
+                            <aside className={`${sidebarOpen ? 'w-80' : 'w-0'} transition-all duration-500 overflow-hidden shrink-0`}>
+                                <div className="sticky top-28 space-y-6">
                                     {/* Filter Header */}
-                                    <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                                        <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                                        <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
                                             <h3 className="text-xl font-bold text-white flex items-center gap-2">
                                                 <Filter className="w-5 h-5 text-purple-400" />
                                                 Filters
                                             </h3>
-                                            <button className="text-purple-400 hover:text-purple-300 text-sm font-semibold">
+                                            <button 
+                                                className="text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
+                                                onClick={() => {
+                                                    setSelectedCategory("All Courses");
+                                                    setSelectedLevel("All Levels");
+                                                    setSelectedPrice("All Prices");
+                                                }}
+                                            >
                                                 Reset
                                             </button>
                                         </div>
 
                                         {/* Category Filter */}
                                         <div className="mb-6">
-                                            <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Category</h4>
-                                            <div className="space-y-2">
+                                            <h4 className="text-xs font-bold text-gray-400 mb-4 uppercase tracking-widest">Category</h4>
+                                            <div className="space-y-1.5">
                                                 {categories.map((cat) => (
                                                     <button
                                                         key={cat}
                                                         onClick={() => setSelectedCategory(cat)}
-                                                        className={`w-full text-left px-4 py-2.5 rounded-lg transition-all duration-200 ${selectedCategory === cat
-                                                            ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
-                                                            : "bg-white/5 text-gray-300 hover:bg-white/10"
+                                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 text-sm font-medium ${selectedCategory === cat
+                                                            ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/25 scale-[1.02]"
+                                                            : "bg-transparent text-gray-300 hover:bg-white/5 hover:text-white"
                                                             }`}
                                                     >
                                                         {cat}
@@ -248,15 +224,15 @@ export default function CoursesPage() {
 
                                         {/* Level Filter */}
                                         <div className="mb-6">
-                                            <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Level</h4>
-                                            <div className="space-y-2">
+                                            <h4 className="text-xs font-bold text-gray-400 mb-4 uppercase tracking-widest">Level</h4>
+                                            <div className="space-y-1.5">
                                                 {levels.map((level) => (
                                                     <button
                                                         key={level}
                                                         onClick={() => setSelectedLevel(level)}
-                                                        className={`w-full text-left px-4 py-2.5 rounded-lg transition-all duration-200 ${selectedLevel === level
-                                                            ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
-                                                            : "bg-white/5 text-gray-300 hover:bg-white/10"
+                                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 text-sm font-medium ${selectedLevel === level
+                                                            ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/25 scale-[1.02]"
+                                                            : "bg-transparent text-gray-300 hover:bg-white/5 hover:text-white"
                                                             }`}
                                                     >
                                                         {level}
@@ -267,15 +243,15 @@ export default function CoursesPage() {
 
                                         {/* Price Filter */}
                                         <div>
-                                            <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Price Range</h4>
-                                            <div className="space-y-2">
+                                            <h4 className="text-xs font-bold text-gray-400 mb-4 uppercase tracking-widest">Price Range</h4>
+                                            <div className="space-y-1.5">
                                                 {priceRanges.map((price) => (
                                                     <button
                                                         key={price}
                                                         onClick={() => setSelectedPrice(price)}
-                                                        className={`w-full text-left px-4 py-2.5 rounded-lg transition-all duration-200 ${selectedPrice === price
-                                                            ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg"
-                                                            : "bg-white/5 text-gray-300 hover:bg-white/10"
+                                                        className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-300 text-sm font-medium ${selectedPrice === price
+                                                            ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/25 scale-[1.02]"
+                                                            : "bg-transparent text-gray-300 hover:bg-white/5 hover:text-white"
                                                             }`}
                                                     >
                                                         {price}
@@ -286,11 +262,12 @@ export default function CoursesPage() {
                                     </div>
 
                                     {/* Featured Banner */}
-                                    <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-6 text-center">
-                                        <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-3" />
-                                        <h4 className="text-white font-bold mb-2">Premium Access</h4>
-                                        <p className="text-gray-300 text-sm mb-4">Get unlimited access to all courses</p>
-                                        <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-semibold transition-all">
+                                    <div className="relative overflow-hidden bg-gradient-to-br from-purple-600/20 to-blue-600/20 backdrop-blur-2xl border border-purple-500/30 rounded-3xl p-8 text-center group">
+                                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <Zap className="w-12 h-12 text-yellow-400 mx-auto mb-4 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]" />
+                                        <h4 className="text-white font-bold text-xl mb-2">Premium Access</h4>
+                                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">Unlock the full potential of your career with unlimited access to all courses.</p>
+                                        <button className="relative w-full bg-white text-black py-3 rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                                             Upgrade Now
                                         </button>
                                     </div>
@@ -332,67 +309,67 @@ export default function CoursesPage() {
                                 </div>
 
                                 {/* Courses */}
-                                <div className={`grid ${viewMode === "grid" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-6`}>
+                                <div className={`grid ${viewMode === "grid" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"} gap-8`}>
                                     {filteredCourses.map((course) => (
                                         <Link
                                             key={course.id}
                                             href={`/courses/${course.id}`}
-                                            className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 block"
+                                            className="group relative flex flex-col bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:-translate-y-2"
                                         >
                                             {/* Course Image */}
-                                            <div className="relative h-48 overflow-hidden">
+                                            <div className="relative h-56 overflow-hidden w-full">
                                                 <Image
                                                     src={course.image}
                                                     alt={course.title}
                                                     fill
-                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
                                                 {/* Badges */}
-                                                <div className="absolute top-3 left-3 flex gap-2">
+                                                <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                                                     {course.trending && (
-                                                        <span className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-                                                            <TrendingUp className="w-3 h-3" />
+                                                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                                                            <TrendingUp className="w-3.5 h-3.5 text-orange-400" />
                                                             Trending
                                                         </span>
                                                     )}
                                                     {course.bestseller && (
-                                                        <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-                                                            <Award className="w-3 h-3" />
+                                                        <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
+                                                            <Award className="w-3.5 h-3.5 text-yellow-400" />
                                                             Bestseller
                                                         </span>
                                                     )}
                                                 </div>
 
                                                 {/* Quick Actions */}
-                                                <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
                                                     <button
-                                                        onClick={(e) => e.preventDefault()}
-                                                        className="bg-white/20 backdrop-blur-md hover:bg-white/30 p-2 rounded-full transition-all"
+                                                        onClick={(e) => { e.preventDefault(); /* Handle action */ }}
+                                                        className="bg-black/50 backdrop-blur-md hover:bg-purple-600 p-2.5 rounded-full transition-colors border border-white/10 text-white"
                                                     >
-                                                        <Heart className="w-4 h-4 text-white" />
+                                                        <Heart className="w-4 h-4" />
                                                     </button>
                                                     <button
-                                                        onClick={(e) => e.preventDefault()}
-                                                        className="bg-white/20 backdrop-blur-md hover:bg-white/30 p-2 rounded-full transition-all"
+                                                        onClick={(e) => { e.preventDefault(); /* Handle action */ }}
+                                                        className="bg-black/50 backdrop-blur-md hover:bg-purple-600 p-2.5 rounded-full transition-colors border border-white/10 text-white"
                                                     >
-                                                        <Share2 className="w-4 h-4 text-white" />
+                                                        <Share2 className="w-4 h-4" />
                                                     </button>
                                                 </div>
 
                                                 {/* Play Button Overlay */}
-                                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                                    <div className="bg-white/20 backdrop-blur-md border-2 border-white/50 hover:bg-white/30 p-4 rounded-full transition-all transform group-hover:scale-110">
-                                                        <Play className="w-8 h-8 text-white fill-white" />
+                                                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div className="bg-purple-600/90 backdrop-blur-md p-4 rounded-full transition-transform transform scale-75 group-hover:scale-100 shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                                                        <Play className="w-8 h-8 text-white fill-white ml-1" />
                                                     </div>
                                                 </div>
 
-                                                {/* Level Badge */}
-                                                <div className="absolute bottom-3 left-3">
-                                                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${course.level === "Beginner" ? "bg-green-500/80 text-white" :
-                                                        course.level === "Intermediate" ? "bg-blue-500/80 text-white" :
-                                                            "bg-purple-500/80 text-white"
+                                                {/* Level & Category */}
+                                                <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                                                    <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${course.level === "Beginner" ? "bg-green-500/20 text-green-300 border-green-500/30" :
+                                                        course.level === "Intermediate" ? "bg-blue-500/20 text-blue-300 border-blue-500/30" :
+                                                            "bg-purple-500/20 text-purple-300 border-purple-500/30"
                                                         }`}>
                                                         {course.level}
                                                     </span>
@@ -400,81 +377,71 @@ export default function CoursesPage() {
                                             </div>
 
                                             {/* Course Content */}
-                                            <div className="p-5">
-                                                {/* Category */}
-                                                <p className="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-2">
-                                                    {course.category}
-                                                </p>
+                                            <div className="p-6 flex flex-col flex-grow">
+                                                <div className="flex items-center gap-2 mb-3">
+                                                    <span className="w-2 h-2 rounded-full bg-purple-500" />
+                                                    <p className="text-purple-400 text-xs font-bold uppercase tracking-widest">
+                                                        {course.category}
+                                                    </p>
+                                                </div>
 
-                                                {/* Title */}
-                                                <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 group-hover:text-purple-400 transition-colors">
+                                                <h3 className="text-white font-bold text-xl mb-3 line-clamp-2 leading-tight group-hover:text-purple-300 transition-colors">
                                                     {course.title}
                                                 </h3>
 
-                                                {/* Description */}
-                                                <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                                                <p className="text-gray-400 text-sm mb-6 line-clamp-2 leading-relaxed flex-grow">
                                                     {course.description}
                                                 </p>
 
-                                                {/* Instructor */}
-                                                <p className="text-gray-300 text-sm mb-3">
-                                                    by <span className="text-purple-400 font-semibold">{course.instructor}</span>
-                                                </p>
-
-                                                {/* Stats */}
-                                                <div className="flex items-center gap-4 mb-4 text-sm text-gray-300">
-                                                    <div className="flex items-center gap-1">
-                                                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                                                        <span className="font-semibold">{course.rating}</span>
+                                                <div className="flex items-center justify-between border-t border-white/10 pt-5 mb-5">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white text-xs font-bold">
+                                                            {course.instructor.charAt(0)}
+                                                        </div>
+                                                        <span className="text-gray-300 text-sm font-medium">{course.instructor}</span>
                                                     </div>
-                                                    <div className="flex items-center gap-1">
-                                                        <Users className="w-4 h-4" />
-                                                        <span>{course.students.toLocaleString()}</span>
-                                                    </div>
-                                                    <div className="flex items-center gap-1">
-                                                        <Clock className="w-4 h-4" />
-                                                        <span>{course.duration}</span>
+                                                    <div className="flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-full">
+                                                        <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                                                        <span className="text-white text-sm font-bold">{course.rating}</span>
                                                     </div>
                                                 </div>
 
-                                                {/* Progress Bar (if enrolled) */}
-                                                {course.progress !== undefined && (
-                                                    <div className="mb-4">
-                                                        <div className="flex items-center justify-between text-xs text-gray-400 mb-1">
-                                                            <span>Your Progress</span>
-                                                            <span className="font-semibold text-purple-400">{course.progress}%</span>
-                                                        </div>
-                                                        <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
-                                                            <div
-                                                                className="bg-gradient-to-r from-purple-600 to-pink-600 h-full rounded-full transition-all duration-500"
-                                                                style={{ width: `${course.progress}%` }}
-                                                            ></div>
-                                                        </div>
+                                                <div className="flex items-center gap-5 text-sm text-gray-400 mb-6">
+                                                    <div className="flex items-center gap-2">
+                                                        <Users className="w-4 h-4 text-purple-400" />
+                                                        <span>{course.students.toLocaleString()}</span>
                                                     </div>
-                                                )}
+                                                    <div className="flex items-center gap-2">
+                                                        <Clock className="w-4 h-4 text-blue-400" />
+                                                        <span>{course.duration}</span>
+                                                    </div>
+                                                    <div className="flex items-center gap-2">
+                                                        <BookOpen className="w-4 h-4 text-green-400" />
+                                                        <span>{course.lessons}</span>
+                                                    </div>
+                                                </div>
 
                                                 {/* Price and CTA */}
-                                                <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                                                    <div>
-                                                        <div className="flex items-center gap-2">
-                                                            <span className="text-2xl font-bold text-white">
-                                                                {course.price} LKR
+                                                <div className="flex items-center justify-between mt-auto">
+                                                    <div className="flex flex-col">
+                                                        <div className="flex items-baseline gap-2">
+                                                            <span className="text-2xl font-black text-white">
+                                                                {course.price.toLocaleString()} <span className="text-sm font-medium text-gray-400">LKR</span>
                                                             </span>
-                                                            {course.originalPrice && (
-                                                                <span className="text-sm text-gray-500 line-through">
-                                                                    {course.originalPrice} LKR
-                                                                </span>
-                                                            )}
                                                         </div>
                                                         {course.originalPrice && (
-                                                            <span className="text-xs text-green-400 font-semibold">
-                                                                Save {Math.round((1 - course.price / course.originalPrice) * 100)}%
-                                                            </span>
+                                                            <div className="flex items-center gap-2 mt-1">
+                                                                <span className="text-sm text-gray-500 line-through font-medium">
+                                                                    {course.originalPrice.toLocaleString()} LKR
+                                                                </span>
+                                                                <span className="text-xs text-green-400 font-bold bg-green-400/10 px-2 py-0.5 rounded">
+                                                                    {Math.round((1 - course.price / course.originalPrice) * 100)}% OFF
+                                                                </span>
+                                                            </div>
                                                         )}
                                                     </div>
-                                                    <div className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-purple-500/30">
-                                                        <span>View Details</span>
-                                                        <ChevronRight className="w-4 h-4" />
+                                                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-purple-600 group-hover:border-purple-500 transition-all duration-300">
+                                                        <ChevronRight className="w-5 h-5" />
                                                     </div>
                                                 </div>
                                             </div>
