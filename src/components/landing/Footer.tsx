@@ -1,18 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
     return (
-        <footer className="w-full bg-transparent border-t border-white/5 pt-16 pb-8 flex justify-center">
+        <footer className="w-full bg-black/40 backdrop-blur-xl border-t border-white/5 pt-16 pb-8 flex justify-center">
             <div className="w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] flex flex-col gap-12">
                 {/* Top Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
                     {/* Brand Info */}
                     <div className="flex flex-col gap-6">
-                        <Link href="/" className="text-white font-bold text-2xl tracking-tighter">
-                            FACADE
+                        <Link href="/" className="flex items-center gap-2 group w-fit">
+                            <Image 
+                                src="/logo.png" 
+                                alt="Facade Logo" 
+                                width={48} 
+                                height={48} 
+                                className="object-contain group-hover:scale-105 transition-transform" 
+                            />
+                            <span className="text-white font-bold text-2xl tracking-tighter group-hover:text-purple-300 transition-colors">
+                                FACADE
+                            </span>
                         </Link>
                         <p className="text-white/60 text-sm leading-relaxed">
                             Empowering learners through cutting-edge technology and expert mentorship.

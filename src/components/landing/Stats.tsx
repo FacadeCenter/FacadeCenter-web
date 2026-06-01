@@ -11,7 +11,7 @@ const statsData = [
 
 export function Stats() {
     return (
-        <section className="w-full flex justify-center bg-transparent backdrop-blur-sm">
+        <section className="w-full flex justify-center bg-black/40 backdrop-blur-xl relative z-10">
             <div
                 className={cn(
                     "w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] py-10 md:py-[40px] flex flex-wrap items-center justify-around gap-8 md:gap-4 relative overflow-hidden border-y border-white/5"
