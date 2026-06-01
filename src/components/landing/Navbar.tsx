@@ -10,7 +10,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
     { label: "Courses", href: "/courses" },
     { label: "Contact", href: "/contact" },
-    { label: "Pricing", href: "/pricing" },
+    // { label: "Pricing", href: "/pricing" },
 ];
 
 export function Navbar() {
