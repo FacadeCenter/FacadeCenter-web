@@ -6,7 +6,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "luc
 
 export function Footer() {
     return (
-        <footer className="w-full bg-black/40 backdrop-blur-xl border-t border-white/5 pt-16 pb-8 flex justify-center">
+        <footer className="w-full bg-black/20 backdrop-blur-xl border-t border-white/10 pt-16 pb-8 flex justify-center relative z-10">
             <div className="w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] flex flex-col gap-12">
                 {/* Top Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">

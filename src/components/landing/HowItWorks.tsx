@@ -32,7 +32,7 @@ const steps = [
 
 export function HowItWorks() {
     return (
-        <section className="w-full bg-black/40 backdrop-blur-xl py-20 flex justify-center border-y border-white/5 relative z-10">
+        <section className="w-full py-20 flex justify-center relative z-10">
             <div className="w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] flex flex-col items-center gap-16">
                 {/* Title */}
                 <div className="flex flex-col items-center gap-4 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">

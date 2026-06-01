@@ -11,10 +11,10 @@ const statsData = [
 
 export function Stats() {
     return (
-        <section className="w-full flex justify-center bg-black/40 backdrop-blur-xl relative z-10">
+        <section className="w-full flex justify-center relative z-10 py-8 px-4">
             <div
                 className={cn(
-                    "w-full max-w-[1280px] px-6 md:px-[60px] lg:px-[120px] py-10 md:py-[40px] flex flex-wrap items-center justify-around gap-8 md:gap-4 relative overflow-hidden border-y border-white/5"
+                    "w-full max-w-[1280px] px-6 md:px-[60px] py-8 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-white/10 flex flex-wrap items-center justify-around gap-8 md:gap-4 shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
                 )}
             >
                 {statsData.map((stat, index) => (
