@@ -1,0 +1,44 @@
+
+> facade-web@0.1.0 lint
+> eslint
+
+
+/Users/asithalakmal/Documents/web/Facade-web/src/app/about/page.tsx
+   7:8   warning  'Image' is defined but never used                                @typescript-eslint/no-unused-vars
+  53:52  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/asithalakmal/Documents/web/Facade-web/src/app/checkout/page.tsx
+  6:10  warning  'CreditCard' is defined but never used  @typescript-eslint/no-unused-vars
+  8:8   warning  'Image' is defined but never used       @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/app/contact/page.tsx
+  22:31  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/asithalakmal/Documents/web/Facade-web/src/app/courses/[id]/page.tsx
+    6:16   warning  'Clock' is defined but never used                                @typescript-eslint/no-unused-vars
+    6:125  warning  'CheckCircle2' is defined but never used                         @typescript-eslint/no-unused-vars
+  266:75   error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  314:103  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  495:116  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  495:133  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/asithalakmal/Documents/web/Facade-web/src/app/courses/page.tsx
+  5:100  warning  'Download' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/components/landing/CertificationCTA.tsx
+  4:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/components/landing/Hero.tsx
+  5:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/components/landing/HowItWorks.tsx
+  4:30  warning  'Layout' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/components/landing/InstructorCarousel.tsx
+  6:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/asithalakmal/Documents/web/Facade-web/src/components/landing/Testimonials.tsx
+  6:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 17 problems (6 errors, 11 warnings)
+
